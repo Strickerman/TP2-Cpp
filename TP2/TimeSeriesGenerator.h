@@ -3,17 +3,15 @@
 
 #include <vector>
 
-
 class TimeSeriesGenerator {
 protected:
     int seed{};
 public:
     TimeSeriesGenerator();
     TimeSeriesGenerator(int seed);
-    ~TimeSeriesGenerator()=default;
-    virtual std::vector<double> generateTimeSeries(int)=0;
-    void printTimeSeries(std::vector<double>) const;
+    virtual ~TimeSeriesGenerator() = default;
+    virtual std::vector<double> generateTimeSeries(int) = 0;
+    static void printTimeSeries(const std::vector<double>& series);
 };
-
 
 #endif //TP2_TIMESERIESGENERATOR_H
